@@ -174,11 +174,11 @@ def main():
             for row in info_schema:
                 print(row)
 
-        with tracer.start_as_current_span('ReadWriteTransaction'):
-            try:
-                read_and_update_data(database)
-            except Exception as e:
-                print(e)
+    with tracer.start_as_current_span('ReadWriteTransaction'):
+        try:
+            read_and_update_data(database)
+        except Exception as e:
+            print(e)
 
 
 if __name__ == '__main__':
